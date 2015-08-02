@@ -110,5 +110,16 @@ summary(regre)
 #Para el regresor tasa.crimen este es significado al 90% de confiabilidad
 
 #EJERCICIO 2.9
+### Gráficos residuales
+residuo <- regre[["residuals"]]
+prediccion <- regre[["fitted.values"]]
 
+hist(residuo,15)
+mean(residuo)
+qqnorm(residuo)
+qqline(residuo,col="red")
+plot(residuo,prediccion)
 
+##como podemos ver la media es practicamente cero y los residuos
+#estan dentro de  una franja por lo que se puede decir que este modelo 
+#no viola las hipotesis de normalidad
